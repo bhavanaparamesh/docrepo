@@ -8,12 +8,12 @@ pipeline{
     }
       stage{
       steps{
-        sh "docker build -t image2 . "
+        sh "docker build -t image3 . "
        }
       }
         stage{
       steps{
-        sh "docker run -d --name con2 image2"
+        sh "docker run -d --name con3 image3"
        }
     }  
   }
