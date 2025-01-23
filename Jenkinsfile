@@ -1,6 +1,6 @@
 pipeline{
   agent any
-  satages{
+  stages{
     stage{
       steps{
         git branch: 'main', url: 'https://github.com/bhavanaparamesh/docrepo.git'
