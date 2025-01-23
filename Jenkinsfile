@@ -1,21 +1,21 @@
 pipeline{
   agent any
   stages{
-    stage{
+    stage("code"){
       steps{
         git branch: 'main', url: 'https://github.com/bhavanaparamesh/docrepo.git'
       }
     }
-      stage{
-      steps{
-        sh "docker build -t image3 . "
-       }
+      stage("build"){
+        steps{
+         sh "docker build -t image3 ."
+        }
       }
-        stage{
-      steps{
-        sh "docker run -d --name con3 image3"
-       }
-    }  
+        stage("container"){
+          steps{
+          sh "docker run -itd --name flm -p 2233:80 image3"
+         }
+     }  
   }
 }
 
