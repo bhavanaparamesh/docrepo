@@ -1,1 +1,40 @@
+version: "3"
+services:
+  instamart:
+    container_name: instamart
+    build: ./instamart
+    ports:
+      - "1111:80"
+    volumes:
+      - paramesh_volume:/usr/share/nginx/html/
+  
+  fooddelivery:
+    container_name: fooddelivery
+    build: ./fooddelivery
+    ports:
+      - "2222:80"
+    volumes:
+      - bhavana_volume:/usr/share/nginx/html/
+  
+  watsapp:
+    container_name: watsapp
+    build: ./watsapp
+    ports:
+      - "3333:80"
+    volumes:
+      - nani_volume:/usr/share/nginx/html/
+  
+  teligram:
+    container_name: teligram
+    build: ./teligram
+    ports:
+      - "4444:80"
+    volumes:
+      - chinni_volume:/usr/share/nginx/html/
+
+volumes:
+  paramesh_volume:
+  bhavana_volume:
+  chinni_volume:
+  nani_volume:
 
