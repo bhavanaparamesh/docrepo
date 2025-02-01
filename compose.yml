@@ -1,3 +1,4 @@
+---
 version: "3"
 services:
   instamart:
@@ -7,6 +8,9 @@ services:
       - "1111:80"
     volumes:
       - paramesh_volume:/usr/share/nginx/html/
+    networks:
+      - devops
+      
   
   fooddelivery:
     container_name: fooddelivery
@@ -15,7 +19,10 @@ services:
       - "2222:80"
     volumes:
       - bhavana_volume:/usr/share/nginx/html/
-  
+    networks:
+      - aws
+      
+
   watsapp:
     container_name: watsapp
     build: ./watsapp
@@ -23,7 +30,9 @@ services:
       - "3333:80"
     volumes:
       - nani_volume:/usr/share/nginx/html/
-  
+    networks:
+      - python
+
   teligram:
     container_name: teligram
     build: ./teligram
@@ -31,6 +40,8 @@ services:
       - "4444:80"
     volumes:
       - chinni_volume:/usr/share/nginx/html/
+    networks:
+      - azure
 
 volumes:
   paramesh_volume:
@@ -38,3 +49,8 @@ volumes:
   chinni_volume:
   nani_volume:
 
+networks:
+  devops:
+  aws:
+  python:
+  azure:
